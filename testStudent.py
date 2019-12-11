@@ -190,30 +190,27 @@ headers =  {
 
 post_url = "https://www.scoregg.com/services/api_url.php"
 post_params = {
-	# "api_path":"/services/gamingDatabase/match_data_ssdb_list.php",
-	# "method":"post",
-	# "platform":"web",
-	# "api_version":"9.9.9",
-	# "language_id":"1",
-	# "tournament_id":"139",
-	# "type":"hero",
-	# "order_type":"APPEAR",
-	# "order_value":"DESC",
-	# "team_name":'',
-	# "player_name":'',
-	# "positionID":"1",
-	# "page":"1"
 	"api_path": "services/match/web_math_list.php",
 	"gameID": "1",
-	"date": "2019-7-16",
+	"date": "2019-5-27",
 	"tournament_id": "120",
 	"api_version": "9.9.9",
 	"platform": "web"
 	}
 r = requests.post(post_url, post_params)
         #post需要输入两个参数，一个是刚才的链接，一个是data，返回的是一个Response对象
-answer=json.loads(r.text)
+answer=json.loads(r.text,strict=False)
 print(answer["data"]["list"])
+strdate  = "2019-8-8"
+strdatec = strdate.split("-")
+strdatec1 = []
+print(strdatec)
+for i in range(len(strdatec)):
+	if i >0 and int(strdatec[i])<10:
+		strdatec[i] = "0{}".format(strdatec[i])
+	strdatec1.append(strdatec[i])
+print(strdatec1)
+print("%s.%s.%s" % (int(strdatec1[0]), strdatec1[1], strdatec1[2]))
 # print(answer["data"]["list"]["2019.07.15"])
 # print(answer["data"]["list"]["2019.07.16"])
 #----------------------------------------------------------------------

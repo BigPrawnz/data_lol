@@ -14,9 +14,12 @@ def dateRange(beginDate, endDate):
         date_new = dates[i].split("-")
         dates_return.append('%d-%d-%d' % (int(date_new[0]), int(date_new[1]), int(date_new[2])))
     return dates_return
-
-# if __name__ == '__main__':
-#     for date in dateRange('2018-02-01', '2018-02-10'):
-#     	date_new = date.split("-")
-#     	print('%d-%d-%d' % (int(date_new[0]), int(date_new[1]), int(date_new[2])))
-print(dateRange('2018-02-01', '2018-02-10'))
+print(dateRange("2019-05-27","2019-08-18"))
+dates_list = dateRange("2019-05-27","2019-08-18")
+all_dates_list = []
+for k in range(0,len(dates_list),7):
+    seven_dates_list = []
+    for j in range(k,k+7):
+        seven_dates_list.append(dates_list[j])
+    all_dates_list.append(seven_dates_list)
+print(all_dates_list)

@@ -20,6 +20,7 @@ class dataMatchParent(scrapy.Item):
 	team_a_win = scrapy.Field()
 	team_b_win = scrapy.Field()
 	win_team_id = scrapy.Field()
+	match_attr_id = scrapy.Field()
 class dataMatches(scrapy.Item):
 	pass
 class dataBan(scrapy.Item):
